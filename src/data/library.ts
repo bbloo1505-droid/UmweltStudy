@@ -15,9 +15,44 @@ export const libraryEntries: LibraryEntry[] = [
       'When an action may significantly impact MNES (e.g., threatened species/communities, Ramsar wetlands, heritage, migratory species) or affects Commonwealth land/agency actions.',
     typicalOutputs: ['PMST report summary', 'EPBC self-assessment memo', 'Referral support appendix / impact assessment sections'],
     related: ['MNES', 'PMST', 'SPRAT', 'Significant Impact Guidelines'],
-    officialLink: 'https://www.dcceew.gov.au/environment/epbc/our-role/what-is-protected',
-    sources: ['dcceew-epbc-protected', 'dcceew-epbc-publications', 'dcceew-epbc-self-assess'],
+    officialLink: 'https://www.legislation.gov.au/Series/C2004A00485',
+    sources: ['fed-leg-epbc-act', 'dcceew-epbc-protected', 'dcceew-epbc-publications', 'dcceew-epbc-self-assess'],
     topics: ['approvals', 'legislation', 'threatened-species', 'policy'],
+  },
+  {
+    id: 'sig-impact-1-1',
+    name: 'Significant Impact Guidelines 1.1 – Matters of National Environmental Significance',
+    jurisdiction: 'Commonwealth',
+    year: '2013 (page updated 2021)',
+    whatItIs:
+      'Primary Commonwealth guidance for self-assessing whether an action is likely to have a significant impact on MNES under the EPBC Act.',
+    usedFor: 'Significance testing, referral advice, and impact rationale once MNES are flagged via PMST/desktop review.',
+    interviewMention:
+      'A crisp line: “I’d use Significant Impact Guidelines 1.1 to test whether our likely impacts cross the federal significance threshold before recommending a referral position.”',
+    trigger: 'After PMST/desktop screening suggests MNES may be present or potentially impacted.',
+    typicalOutputs: ['Significant impact assessment memo', 'Referral justification narrative', 'Avoidance/minimisation advice'],
+    related: ['EPBC Act', 'PMST', 'MNES', 'Significant impact'],
+    officialLink:
+      'https://www.dcceew.gov.au/environment/epbc/publications/significant-impact-guidelines-11-matters-national-environmental-significance',
+    sources: ['dcceew-sig-impact-1-1', 'dcceew-sig-impact-1-1-pdf'],
+    topics: ['approvals', 'legislation', 'policy', 'consulting'],
+  },
+  {
+    id: 'epbc-offsets-policy-2012',
+    name: 'EPBC Act Environmental Offsets Policy (2012)',
+    jurisdiction: 'Commonwealth',
+    year: '2012',
+    whatItIs:
+      'Commonwealth policy guiding the use of offsets under the EPBC Act: offsets compensate for residual impacts after avoidance and mitigation.',
+    usedFor: 'Designing and testing federal offset proposals during EPBC assessments where residual significant impacts remain.',
+    interviewMention:
+      'It signals you understand the mitigation hierarchy: offsets come after avoidance and mitigation, not before.',
+    trigger: 'Where residual significant impacts on protected matters remain after avoidance and mitigation measures.',
+    typicalOutputs: ['Federal offset strategy', 'Offset proposal summary', 'Offsets assessment guide inputs'],
+    related: ['Mitigation hierarchy', 'Residual impact', 'EPBC assessment'],
+    officialLink: 'https://www.dcceew.gov.au/environment/epbc/publications/epbc-act-environmental-offsets-policy',
+    sources: ['dcceew-epbc-offsets-policy-2012'],
+    topics: ['offsets', 'approvals', 'policy', 'legislation'],
   },
   {
     id: 'pmst-tool',
@@ -108,6 +143,147 @@ export const libraryEntries: LibraryEntry[] = [
     officialLink: 'https://www.qld.gov.au/environment/management/environmental/offsets/legislation',
     sources: ['qld-offsets-legislation-page', 'qld-offsets-overview'],
     topics: ['offsets', 'qld', 'policy'],
+  },
+  {
+    id: 'qld-sri-guideline',
+    name: 'Significant Residual Impact Guideline (Queensland Environmental Offsets Policy)',
+    jurisdiction: 'Queensland',
+    year: '2014',
+    whatItIs:
+      'A Queensland guideline to help determine whether an impact on a prescribed environmental matter is a significant residual impact (the threshold question before offsets).',
+    usedFor:
+      'Assessing whether residual impacts are “significant” (after avoidance and mitigation) for matters of State environmental significance under relevant Queensland legislation.',
+    interviewMention:
+      'Use it to show you understand the threshold question: “Before designing offsets, I’d assess whether the residual impact is significant using the SRI guideline.”',
+    trigger:
+      'After avoidance and mitigation, when residual impacts remain on prescribed matters and you need to determine if an offset condition may apply.',
+    typicalOutputs: ['SRI assessment table', 'Impact significance memo', 'Approvals strategy advice note'],
+    related: ['Environmental Offsets Act 2014', 'Queensland Environmental Offsets Policy'],
+    officialLink: 'https://environment.des.qld.gov.au/__data/assets/pdf_file/0017/90404/significant-residual-impact-guide.pdf',
+    sources: ['qld-sri-guideline-2014', 'qld-offsets-resources'],
+    topics: ['offsets', 'qld', 'policy', 'approvals'],
+  },
+  {
+    id: 'qld-terrestrial-hqa-guide',
+    name: 'Guide to determining terrestrial habitat quality (QEOP) – v1.3 (Feb 2020)',
+    jurisdiction: 'Queensland',
+    year: '2020',
+    whatItIs:
+      'Queensland’s practical guide for terrestrial habitat quality assessment under the Queensland Environmental Offsets Policy, based on BioCondition methods and benchmarks.',
+    usedFor:
+      'Assessing offset site suitability relative to impact site; determining offset size/scale; baseline assessments for advanced offsets; and monitoring progress toward conservation outcomes.',
+    interviewMention:
+      'If asked “HQA in QLD”, this is the clean method name to reference — and you can link it to BioCondition and consistent repeatable scoring.',
+    trigger:
+      'Land-based offset assessment and monitoring where habitat quality scoring is required under the Queensland offsets framework.',
+    typicalOutputs: ['Habitat quality score sheets', 'Offset delivery plan calculations', 'Monitoring report habitat quality results'],
+    related: ['BioCondition', 'Queensland Environmental Offsets Policy', 'Offsets suitability'],
+    officialLink: 'https://environment.des.qld.gov.au/__data/assets/pdf_file/0017/102833/habitat-quality-assessment-guide-v1-3.pdf',
+    sources: ['qld-terrestrial-habitat-quality-guide', 'qld-biocondition-page', 'qld-offsets-resources'],
+    topics: ['offsets', 'monitoring', 'qld', 'policy'],
+  },
+  {
+    id: 'qld-planning-act',
+    name: 'Planning Act 2016 (Qld)',
+    jurisdiction: 'Queensland',
+    year: '2016',
+    whatItIs:
+      'Queensland’s core planning system legislation for land-use planning and development assessment to facilitate ecological sustainability.',
+    usedFor:
+      'Understanding how biodiversity issues enter the planning system; interpreting where state interests, regional plans and local planning instruments influence assessment.',
+    interviewMention:
+      'A simple line: “Ecology advice often sits inside planning pathways, not just ecology-only approvals.”',
+    trigger: 'Development applications; planning scheme interpretation; early constraints reviews involving planning instruments.',
+    typicalOutputs: ['Planning due diligence', 'Trigger tables (state/local)', 'Planning ecology advice notes'],
+    related: ['State Planning Policy', 'Local planning scheme overlays', 'MSES mapping method'],
+    officialLink: 'https://www.legislation.qld.gov.au/view/html/inforce/current/act-2016-025',
+    sources: ['qld-planning-act-2016'],
+    topics: ['qld', 'policy', 'approvals', 'desktop-review'],
+  },
+  {
+    id: 'qld-vma',
+    name: 'Vegetation Management Act 1999 (Qld)',
+    jurisdiction: 'Queensland',
+    year: '1999',
+    whatItIs:
+      'Queensland legislation regulating vegetation clearing to maintain ecological processes and prevent biodiversity loss.',
+    usedFor: 'Clearing constraints, regulated vegetation interpretation, and desktop review for projects involving clearing.',
+    interviewMention:
+      'It shows you understand the clearing side of ecology work (REs/regrowth/remnant constraints) that often drives project design and approvals.',
+    trigger: 'Projects involving vegetation clearing or regulated vegetation constraints.',
+    typicalOutputs: ['Clearing constraints memo', 'Regulated vegetation mapping review', 'Vegetation impact assessment sections'],
+    related: ['Regional ecosystems (RE mapping)', 'Offsets framework (where residual impacts are significant)'],
+    officialLink: 'https://www.legislation.qld.gov.au/view/html/inforce/current/act-1999-090',
+    sources: ['qld-vma-1999'],
+    topics: ['qld', 'legislation', 'approvals', 'desktop-review'],
+  },
+  {
+    id: 'qld-nca',
+    name: 'Nature Conservation Act 1992 (Qld)',
+    jurisdiction: 'Queensland',
+    year: '1992',
+    whatItIs: 'Queensland’s core conservation law underpinning protected areas and protection of native wildlife and habitat.',
+    usedFor: 'Protected area context, protected plants/animals, permits, and state species status checks.',
+    interviewMention:
+      'It shows you know state-listed biodiversity matters don’t sit only under planning/offsets — there’s broader species and protected area context too.',
+    trigger: 'Threatened flora/fauna; protected areas; permit pathways; state-listed species status checks.',
+    typicalOutputs: ['Species status summary', 'Protected area constraints notes', 'Permit pathway summary'],
+    related: ['MSES mapping', 'Offsets framework (MSES matters)', 'Planning constraints'],
+    officialLink: 'https://www.legislation.qld.gov.au/view/html/inforce/current/act-1992-020',
+    sources: ['qld-nca-1992'],
+    topics: ['qld', 'legislation', 'approvals'],
+  },
+  {
+    id: 'qld-ep-act',
+    name: 'Environmental Protection Act 1994 (Qld)',
+    jurisdiction: 'Queensland',
+    year: '1994',
+    whatItIs:
+      'Queensland’s key environmental protection legislation; supports environmental authorities (EAs) and regulation of environmentally relevant activities (ERAs).',
+    usedFor: 'Understanding EA pathways and how ecology advice feeds into broader environmental approvals and conditions.',
+    interviewMention:
+      'Useful for resources/industrial contexts: it shows you understand ecology integrates into wider approvals packages (not just ecology-only reports).',
+    trigger: 'Mining, industrial or other ERA-related projects; environmental authority processes.',
+    typicalOutputs: ['EA supporting ecology sections', 'Impact/mitigation content', 'Monitoring requirements support'],
+    related: ['Offsets framework (where MSES impacts are significant)', 'EIS pathways (where relevant)'],
+    officialLink: 'https://www.legislation.qld.gov.au/view/html/inforce/current/act-1994-062',
+    sources: ['qld-ep-act-1994'],
+    topics: ['qld', 'legislation', 'approvals'],
+  },
+  {
+    id: 'qld-sdpwo',
+    name: 'State Development and Public Works Organisation Act 1971 (Qld)',
+    jurisdiction: 'Queensland',
+    year: '1971',
+    whatItIs:
+      'Queensland’s major-projects / Coordinator-General pathway used for coordinated projects and Environmental Impact Statements (EIS).',
+    usedFor: 'Understanding big-project assessment framework where projects are declared coordinated and require an EIS process.',
+    interviewMention:
+      'Good to recognise for infrastructure/energy/resources: “If a project is a coordinated project, ecology inputs often sit within EIS chapters and the CG evaluation process.”',
+    trigger: 'Declared coordinated projects with formal EIS requirements.',
+    typicalOutputs: ['EIS ecology chapters', 'Impact assessment appendices', 'Response-to-submissions support'],
+    related: ['EPBC Act (MNES)', 'Queensland approvals pathways'],
+    officialLink: 'https://www.legislation.qld.gov.au/view/html/inforce/current/act-1971-055',
+    sources: ['qld-sdpwo-act-1971'],
+    topics: ['qld', 'approvals', 'legislation'],
+  },
+  {
+    id: 'local-planning-schemes',
+    name: 'Local planning schemes and biodiversity overlays (council-specific)',
+    jurisdiction: 'Queensland',
+    year: 'Varies by council',
+    whatItIs:
+      'Local planning instruments that can contain biodiversity overlays, local environmental significance layers, waterways/wetlands/bushfire overlays and other constraints.',
+    usedFor: 'Checking local triggers and constraints during desktop review and early project planning.',
+    interviewMention:
+      'A strong nuance: MSES mapping supports planning but local triggers sit in the local planning scheme.',
+    trigger: 'Any project subject to local development assessment in Queensland.',
+    typicalOutputs: ['Local overlay constraints review', 'Local trigger summary table', 'Map pack for PM/client'],
+    related: ['State Planning Policy', 'MSES mapping method', 'Desktop review workflow'],
+    officialLink: 'https://environment.qld.gov.au/management/planning-guidelines/method-mapping-mses',
+    sources: ['qld-mses-method'],
+    topics: ['qld', 'desktop-review', 'approvals', 'policy'],
+    needsVerification: true,
   },
   {
     id: 'qld-mses-mapping-method',
