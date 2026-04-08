@@ -168,6 +168,13 @@ export const sources: SourceRef[] = [
     lastVerifiedISO: '2026-04-08',
   },
   {
+    id: 'dcceew-epbc-approvals',
+    title: 'EPBC Act approvals – DCCEEW',
+    kind: 'commonwealth',
+    url: 'https://www.dcceew.gov.au/environment/epbc/approvals',
+    lastVerifiedISO: '2026-04-08',
+  },
+  {
     id: 'sprat',
     title: 'SPRAT – Species Profile and Threats Database',
     kind: 'commonwealth',
@@ -224,6 +231,21 @@ export const sources: SourceRef[] = [
     title: 'Offsets resources (guidelines, templates) – Queensland Government',
     kind: 'qld',
     url: 'https://www.qld.gov.au/environment/management/environmental/offsets/resources',
+    lastVerifiedISO: '2026-04-08',
+  },
+  {
+    id: 'tnfd-framework',
+    title: 'TNFD – The TNFD Framework (incl. LEAP)',
+    kind: 'tool',
+    url: 'https://tnfd.global/the-framework/',
+    lastVerifiedISO: '2026-04-08',
+    notes: 'Official TNFD site describing the assessment and disclosure approach.',
+  },
+  {
+    id: 'iucn-nbs-standard',
+    title: 'IUCN Global Standard for Nature-based Solutions',
+    kind: 'tool',
+    url: 'https://www.iucn.org/resources/toolkits/iucn-global-standard-nature-based-solutions',
     lastVerifiedISO: '2026-04-08',
   },
 ]

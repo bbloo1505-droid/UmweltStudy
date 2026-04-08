@@ -387,7 +387,7 @@ export const glossaryCards: GlossaryCard[] = [
       'It’s a specific, named framework on Umwelt’s Nature Positive page; referencing it shows you’ve done targeted company research.',
     exampleInPractice:
       'You explain how spatial analysis and monitoring data support the “Assess” step and how restoration planning and offsets can sit within “Transform”.',
-    related: ['Nature Positive', 'TNFD', 'Natural capital accounting'],
+    related: ['Nature Positive', 'TNFD', 'LEAP (TNFD)', 'Nature-based solutions (NbS)'],
     difficulty: 'easy',
     topics: ['nature-positive', 'umwelt', 'consulting'],
     sources: ['umwelt-nature-positive'],
@@ -399,13 +399,639 @@ export const glossaryCards: GlossaryCard[] = [
     consultantDefinition:
       'The Taskforce on Nature-related Financial Disclosures (TNFD) provides recommendations and guidance for assessing and disclosing nature-related dependencies, impacts, risks and opportunities.',
     whyItMatters:
-      'Even as a junior ecologist, understanding why clients care (risk, disclosure, reputation) helps you communicate value and urgency in consulting contexts.',
+      'For this role, BioCondition/HQA and QLD offsets language usually matter more day-to-day — but TNFD explains why clients ask for governance-ready ecology evidence.',
     exampleInPractice:
       'You frame a desktop constraints analysis as reducing risk by identifying potential nature-related impacts early, supporting governance and disclosure readiness.',
-    related: ['Nature Positive', 'ACT-D', 'Natural capital accounting'],
+    related: ['LEAP (TNFD)', 'Nature Positive', 'ACT-D', 'Natural capital accounting', 'Materiality (nature-related)'],
     difficulty: 'medium',
     topics: ['nature-positive', 'consulting', 'umwelt'],
-    sources: ['umwelt-nature-positive'],
+    sources: ['umwelt-nature-positive', 'tnfd-framework'],
+  },
+
+  // --- Consulting ecology / QLD offsets / HQA vocabulary (high interview value) ---
+  {
+    id: 'habitat-quality-score',
+    term: 'Habitat quality score (terrestrial)',
+    plainEnglish:
+      'A scored measure of how good habitat is on a site, used in Queensland’s terrestrial habitat quality method for offsets and monitoring.',
+    consultantDefinition:
+      'Under the Queensland “Guide to determining terrestrial habitat quality”, habitat quality is assessed using BioCondition-style site attributes and species habitat attributes against benchmarks to produce a defensible score for impact and offset matter areas.',
+    whyItMatters:
+      'Junior restoration ecologists in QLD repeatedly touch HQA-style logic — it’s how “condition” becomes numbers regulators can compare.',
+    exampleInPractice:
+      'You document baseline habitat quality scores for impact and offset sites, then show how management is tracking toward the agreed conservation outcome.',
+    related: ['BioCondition', 'BioCondition benchmark', 'Matter area', 'Assessment unit', 'Conservation outcome'],
+    difficulty: 'medium',
+    topics: ['offsets', 'monitoring', 'qld', 'consulting'],
+    sources: ['qld-terrestrial-habitat-quality-guide', 'qld-biocondition-page'],
+  },
+  {
+    id: 'biocondition',
+    term: 'BioCondition',
+    plainEnglish:
+      'Queensland’s vegetation condition assessment method — how “healthy” a patch is compared to a reference benchmark for the same regional ecosystem.',
+    consultantDefinition:
+      'A quantitative site assessment method comparing structural and species attributes to a benchmark for the relevant regional ecosystem; it underpins much of the state’s habitat quality and vegetation condition language.',
+    whyItMatters:
+      'If you can name BioCondition and benchmarks cleanly, you sound credible on HQA and regulated vegetation conversations.',
+    exampleInPractice:
+      'You explain that BioCondition scores support habitat quality calculations and monitoring, not just a subjective “looks good” call.',
+    related: ['BioCondition benchmark', 'Regional Ecosystem (RE)', 'Habitat quality score (terrestrial)'],
+    difficulty: 'easy',
+    topics: ['offsets', 'monitoring', 'qld', 'desktop-review'],
+    sources: ['qld-biocondition-page', 'qld-terrestrial-habitat-quality-guide'],
+  },
+  {
+    id: 'biocondition-benchmark',
+    term: 'BioCondition benchmark',
+    plainEnglish:
+      'The reference “best realistic” condition for a regional ecosystem type — what you compare a site against.',
+    consultantDefinition:
+      'A benchmark represents the median attribute scores of reference sites for a regional ecosystem, used to evaluate how far a site departs from expected native structure and composition for that ecosystem type.',
+    whyItMatters:
+      'Benchmark language is how you justify why a site is “below par” in a defensible way — central to habitat quality and monitoring.',
+    exampleInPractice:
+      'You report key attributes against benchmark medians to show where recruitment, canopy cover or species richness are limiting habitat quality.',
+    related: ['BioCondition', 'Regional Ecosystem (RE)', 'Performance indicators'],
+    difficulty: 'medium',
+    topics: ['offsets', 'monitoring', 'qld'],
+    sources: ['qld-biocondition-page', 'qld-terrestrial-habitat-quality-guide'],
+  },
+  {
+    id: 'site-based-attributes',
+    term: 'Site-based attributes (HQA)',
+    plainEnglish:
+      'Measurable on-ground vegetation features at a site — things like canopy cover, stem density, and native species counts.',
+    consultantDefinition:
+      'Within Queensland’s terrestrial habitat quality method, site-based attributes are measured field attributes summarising vegetation structure and composition at the assessment unit, compared to benchmark values for the regional ecosystem.',
+    whyItMatters:
+      'It separates “what we measured on the ground” from species habitat modelling — both matter, but site attributes are the BioCondition backbone.',
+    exampleInPractice:
+      'You QC field sheets to ensure site-based attributes are complete and consistent across impact vs offset matter areas.',
+    related: ['Species habitat attributes', 'Assessment unit', 'BioCondition benchmark'],
+    difficulty: 'medium',
+    topics: ['offsets', 'monitoring', 'qld'],
+    sources: ['qld-terrestrial-habitat-quality-guide', 'qld-biocondition-page'],
+  },
+  {
+    id: 'species-habitat-attributes',
+    term: 'Species habitat attributes (HQA)',
+    plainEnglish:
+      'Attributes that describe habitat for particular species of concern — often layered on top of site vegetation measures.',
+    consultantDefinition:
+      'In the terrestrial habitat quality guide, species habitat attributes capture habitat elements relevant to priority species (where applicable), complementing site-based structural/composition measures for an assessment unit.',
+    whyItMatters:
+      'Interviewers may probe how HQA differs from “generic condition” — this is part of that answer.',
+    exampleInPractice:
+      'You align survey effort and attribute checks with species known from SPRAT/PMST screening and field verification priorities.',
+    related: ['Site-based attributes (HQA)', 'Threatened species', 'SPRAT'],
+    difficulty: 'hard',
+    topics: ['offsets', 'threatened-species', 'qld'],
+    sources: ['qld-terrestrial-habitat-quality-guide'],
+  },
+  {
+    id: 'matter-area',
+    term: 'Matter area',
+    plainEnglish:
+      'The mapped area where a particular prescribed environmental matter (like a habitat type) is being assessed for impacts or offsets.',
+    consultantDefinition:
+      'A spatial unit used in Queensland offsets and habitat quality work to define where a prescribed environmental matter occurs for assessment, scoring and offset calculations — aligned to the assessment rules in the current policy and technical guides.',
+    whyItMatters:
+      '“Matter area” is core QLD offsets vocabulary; confusing it with “whole property” is a common junior mistake.',
+    exampleInPractice:
+      'You clearly separate project footprint, mapped matter area, and assessment unit boundaries in figures and methods.',
+    related: ['Prescribed environmental matter (PEM)', 'Assessment unit', 'Offset condition'],
+    difficulty: 'medium',
+    topics: ['offsets', 'qld', 'gis'],
+    sources: ['qld-terrestrial-habitat-quality-guide', 'qld-offsets-overview'],
+  },
+  {
+    id: 'assessment-unit',
+    term: 'Assessment unit',
+    plainEnglish:
+      'The parcel of land where you run the habitat quality assessment for a matter — your sampling/analysis footprint.',
+    consultantDefinition:
+      'In terrestrial habitat quality assessment, assessment units are the spatial units within which site-based and species habitat attributes are measured and habitat quality scores are calculated for the relevant matter area.',
+    whyItMatters:
+      'It’s how you keep field methods reproducible and comparable across baseline vs monitoring.',
+    exampleInPractice:
+      'You document how assessment units were delineated (and why) so monitoring can repeat the same logic later.',
+    related: ['Matter area', 'Habitat quality score (terrestrial)', 'Baseline data'],
+    difficulty: 'medium',
+    topics: ['offsets', 'monitoring', 'qld'],
+    sources: ['qld-terrestrial-habitat-quality-guide'],
+  },
+  {
+    id: 'conservation-outcome-qld',
+    term: 'Conservation outcome (offsets)',
+    plainEnglish:
+      'The agreed environmental gain or protection the offset must deliver — not just “doing works on land”.',
+    consultantDefinition:
+      'Under Queensland’s offsets policy framework, offsets are oriented around delivering a conservation outcome for the impacted prescribed environmental matter — secured, managed and monitored in line with the prescribed policy version and technical methods.',
+    whyItMatters:
+      'Interviewers want to hear outcomes language, not only hectares planted.',
+    exampleInPractice:
+      'You link monitoring indicators and completion criteria to whether the conservation outcome is on track across the offset delivery plan.',
+    related: ['Offset suitability', 'Offset condition', 'Performance indicators', 'Completion criteria'],
+    difficulty: 'medium',
+    topics: ['offsets', 'policy', 'qld'],
+    sources: ['qld-offsets-overview', 'qld-offsets-legislation-page'],
+  },
+  {
+    id: 'pem',
+    term: 'Prescribed environmental matter (PEM)',
+    plainEnglish:
+      'The types of environmental values that Queensland’s offsets legislation can attach to — the “what” can trigger offsets.',
+    consultantDefinition:
+      'Matters prescribed under the Environmental Offsets Regulation for Queensland as relevant environmental values for offsetting — the detailed list and mapping rules are defined in legislation/policy and must be checked against the current prescribed version.',
+    whyItMatters:
+      'If you can name PEM and point to Act → Regulation → Policy, you sound procedurally literate.',
+    exampleInPractice:
+      'You build a PEM-focused constraints table linking mapped matter areas to assessment methods and residual impact logic.',
+    related: ['Matter area', 'Residual impact', 'Offset suitability'],
+    difficulty: 'medium',
+    topics: ['offsets', 'legislation', 'qld'],
+    sources: ['qld-offsets-legislation-page', 'qld-offsets-reg-pdf'],
+  },
+  {
+    id: 'offset-condition',
+    term: 'Offset condition',
+    plainEnglish:
+      'The measured condition of habitat on an offset site — baseline and through time.',
+    consultantDefinition:
+      'The condition state of an offset matter area, commonly expressed using habitat quality / BioCondition-aligned methods, used to demonstrate progress toward the conservation outcome and to support monitoring reporting.',
+    whyItMatters:
+      'Offsets are defended with evidence of condition change, not intentions.',
+    exampleInPractice:
+      'You compare baseline vs Year 3 monitoring habitat quality scores against agreed thresholds.',
+    related: ['Habitat quality score (terrestrial)', 'Conservation outcome (offsets)', 'Monitoring'],
+    difficulty: 'easy',
+    topics: ['offsets', 'monitoring', 'qld'],
+    sources: ['qld-terrestrial-habitat-quality-guide', 'qld-offsets-overview'],
+  },
+  {
+    id: 'offset-suitability',
+    term: 'Offset suitability',
+    plainEnglish:
+      'Whether a proposed offset site is appropriate — ecologically and under the policy tests.',
+    consultantDefinition:
+      'A structured assessment that a proposed offset location, size, tenure and management can deliver the required conservation outcome for the impacted matter, consistent with the Queensland Environmental Offsets Policy (current prescribed version) and technical guides.',
+    whyItMatters:
+      '“Suitability” is the bridge between ecology advice and approvals-ready offset strategy.',
+    exampleInPractice:
+      'You document risks (weeds, hydrology, tenure) and how management zones and monitoring will address them.',
+    related: ['Conservation outcome (offsets)', 'Matter area', 'Management zones'],
+    difficulty: 'medium',
+    topics: ['offsets', 'consulting', 'qld'],
+    sources: ['qld-offsets-overview', 'qld-offsets-legislation-page'],
+  },
+  {
+    id: 'net-loss-net-gain',
+    term: 'No net loss / net gain',
+    plainEnglish:
+      'Policy language about not making nature worse overall — and sometimes improving it — relative to a baseline.',
+    consultantDefinition:
+      'Strategic framing used in biodiversity and corporate “nature positive” contexts: avoid net loss of biodiversity from an action or portfolio, and where credible, achieve net gain. Exact legal tests differ by instrument (offsets vs voluntary commitments).',
+    whyItMatters:
+      'You connect field metrics (habitat quality, extent) to what clients and regulators mean by “net”.',
+    exampleInPractice:
+      'You avoid claiming “net gain” without defining the baseline, metrics and additionality — especially outside a formal offset calculation.',
+    related: ['Conservation outcome (offsets)', 'Nature Positive', 'Residual impact'],
+    difficulty: 'medium',
+    topics: ['offsets', 'nature-positive', 'policy'],
+    sources: ['qld-offsets-overview', 'umwelt-nature-positive'],
+  },
+  {
+    id: 'regional-ecosystem-re',
+    term: 'Regional Ecosystem (RE)',
+    plainEnglish:
+      'Queensland’s mapping unit for vegetation types — a combination of ecosystem and land zone.',
+    consultantDefinition:
+      'RE mapping classifies vegetation into ecosystem types by regional ecosystem description and broad land zone; it is central to vegetation management, clearing regulation and BioCondition benchmarking in Queensland.',
+    whyItMatters:
+      'RE is the shorthand everyone uses in QLD clearing and habitat conversations.',
+    exampleInPractice:
+      'You check RE codes against regulated vegetation mapping and field verification to align clearing constraints with habitat assessment.',
+    related: ['Pre-clearing RE', 'Remnant vegetation', 'Regulated vegetation', 'BioCondition benchmark'],
+    difficulty: 'easy',
+    topics: ['qld', 'desktop-review', 'gis', 'approvals'],
+    sources: ['qld-vma-1999', 'qld-biocondition-page'],
+  },
+  {
+    id: 'pre-clearing-re',
+    term: 'Pre-clearing Regional Ecosystem',
+    plainEnglish:
+      'The RE that was on the site before clearing — the historical vegetation type used in many mapping products.',
+    consultantDefinition:
+      'Mapped pre-clearing regional ecosystem layers represent modelled or attributed historic vegetation communities and are used in vegetation management and planning contexts to understand ecosystem type and clearing history — always interpreted with methodology caveats.',
+    whyItMatters:
+      'Offsets and clearing discussions often hinge on what ecosystem you’re benchmarking against.',
+    exampleInPractice:
+      'You cross-check pre-clearing RE with on-ground structure to see if rehabilitation targets are realistic.',
+    related: ['Regional Ecosystem (RE)', 'Remnant vegetation'],
+    difficulty: 'medium',
+    topics: ['qld', 'gis', 'desktop-review'],
+    sources: ['qld-vma-1999', 'qld-mses-method'],
+  },
+  {
+    id: 'remnant-vegetation',
+    term: 'Remnant vegetation',
+    plainEnglish:
+      'Vegetation that still has enough native structure to count as “remnant” under Queensland rules — not fully cleared.',
+    consultantDefinition:
+      'Under the Vegetation Management Act framework, remnant vegetation is defined and mapped according to statutory rules; it is a core concept for clearing regulation and ecological value.',
+    whyItMatters:
+      'Confusing remnant with “any trees on site” undermines credibility in VMA discussions.',
+    exampleInPractice:
+      'You align field observations with remnant mapping categories and list verification needs where mapping is uncertain.',
+    related: ['Regional Ecosystem (RE)', 'Regulated vegetation', 'Vegetation Management Act 1999 (Qld)'],
+    difficulty: 'medium',
+    topics: ['qld', 'approvals', 'legislation'],
+    sources: ['qld-vma-1999'],
+  },
+  {
+    id: 'regulated-vegetation',
+    term: 'Regulated vegetation',
+    plainEnglish:
+      'Vegetation that clearing law controls — you can’t just remove it without a legal pathway.',
+    consultantDefinition:
+      'Vegetation categories and maps under Queensland vegetation management law identifying where clearing is regulated and what exemptions or codes may apply — interpreted alongside regional ecosystem and remnant status.',
+    whyItMatters:
+      'A restoration ecologist still needs clearing literacy because designs intersect with regulated patches.',
+    exampleInPractice:
+      'You flag that a corridor realignment could intersect regulated vegetation and needs a clearing assessment pathway.',
+    related: ['Remnant vegetation', 'Regional Ecosystem (RE)', 'Constraints analysis'],
+    difficulty: 'easy',
+    topics: ['qld', 'approvals', 'consulting'],
+    sources: ['qld-vma-1999'],
+  },
+  {
+    id: 'eia-eis',
+    term: 'EIA / EIS',
+    plainEnglish:
+      'Environmental impact assessment — and for big projects, a formal Environmental Impact Statement package.',
+    consultantDefinition:
+      'EIA refers to the structured assessment of environmental impacts and alternatives for a proposal. In Queensland coordinated projects, an EIS may be required under the State Development and Public Works Organisation Act pathway, producing detailed technical chapters and public review.',
+    whyItMatters:
+      'Umwelt works on infrastructure and resources projects where EIS ecology chapters and response-to-submissions are real deliverables.',
+    exampleInPractice:
+      'You explain how baseline ecology surveys and impact scenarios feed the EIS chapter and conditions tracking.',
+    related: ['Referral (EPBC)', 'Approval conditions', 'Baseline data'],
+    difficulty: 'easy',
+    topics: ['approvals', 'consulting', 'qld'],
+    sources: ['qld-sdpwo-act-1971', 'dcceew-epbc-self-assess'],
+  },
+  {
+    id: 'referral-epbc',
+    term: 'Referral (EPBC Act)',
+    plainEnglish:
+      'Officially telling the Commonwealth you think your project might affect nationally protected matters.',
+    consultantDefinition:
+      'A referral under the EPBC Act is the formal process to determine whether an action requires Commonwealth approval because it has, will have, or is likely to have a significant impact on MNES — informed by PMST, guidelines and evidence.',
+    whyItMatters:
+      'Junior ecologists support referral thinking even if lawyers sign the form.',
+    exampleInPractice:
+      'You assemble a defensible significant impact rationale with baseline data and survey scope.',
+    related: ['Significant impact', 'MNES', 'PMST', 'Significance threshold'],
+    difficulty: 'easy',
+    topics: ['approvals', 'legislation', 'consulting'],
+    sources: ['dcceew-epbc-self-assess', 'fed-leg-epbc-act'],
+  },
+  {
+    id: 'approval-conditions',
+    term: 'Approval conditions',
+    plainEnglish:
+      'Legally binding requirements stuck on an approval — you have to meet them or risk non-compliance.',
+    consultantDefinition:
+      'Conditions attached to EPBC approvals and/or state approvals that specify measurable requirements (clearing limits, offsets, monitoring, reporting). Ecology teams translate conditions into scopes, budgets and field programs.',
+    whyItMatters:
+      'Restoration and monitoring work often exists because a condition requires it.',
+    exampleInPractice:
+      'You map each ecology-related condition to deliverables, timing, and responsible party.',
+    related: ['Conservation outcome (offsets)', 'Monitoring', 'Adaptive management'],
+    difficulty: 'easy',
+    topics: ['approvals', 'offsets', 'consulting'],
+    sources: ['dcceew-epbc-approvals', 'qld-offsets-overview'],
+  },
+  {
+    id: 'significance-threshold',
+    term: 'Significance threshold',
+    plainEnglish:
+      'The line between “impacts matter for the law” vs “not enough to trigger” — judged with context, not vibes.',
+    consultantDefinition:
+      'Under the EPBC Act, significance is not presence/absence of a species alone; it is assessed using Significant Impact Guidelines with considerations of intensity, duration, extent and context. Queensland offset significance uses separate “significant residual impact” tests under state policy.',
+    whyItMatters:
+      'You show you won’t say “species recorded = referral” without analysis.',
+    exampleInPractice:
+      'You document impact pathways, uncertainty, and proportionate survey effort against guideline factors.',
+    related: ['Significant impact', 'Residual impact', 'Referral (EPBC Act)'],
+    difficulty: 'medium',
+    topics: ['approvals', 'offsets', 'policy'],
+    sources: ['dcceew-sig-impact-1-1', 'qld-sri-guideline-2014'],
+  },
+  {
+    id: 'ecological-values',
+    term: 'Ecological values',
+    plainEnglish:
+      'The biodiversity and ecosystem features that matter on a site — species, communities, habitat, processes.',
+    consultantDefinition:
+      'A consultant shorthand for the environmental features that inform constraints, significance and design: threatened species habitat, ecological communities, connectivity, wetlands, riparian function, and resilience — always tied to evidence and mapping caveats.',
+    whyItMatters:
+      'It’s how you summarise desktop + field results for multidisciplinary teams without drowning them in jargon.',
+    exampleInPractice:
+      'You produce a one-page “values and constraints” summary with maps, confidence levels and verification priorities.',
+    related: ['Desktop ecological review', 'MNES', 'MSES'],
+    difficulty: 'easy',
+    topics: ['desktop-review', 'consulting', 'approvals'],
+    sources: ['umwelt-ecology-biodiversity', 'dcceew-epbc-self-assess'],
+  },
+  {
+    id: 'data-gaps',
+    term: 'Data gaps',
+    plainEnglish:
+      'What you still don’t know well enough to make a final call — and why that matters.',
+    consultantDefinition:
+      'Explicitly listed unknowns in desktop and field evidence (seasonality, survey coverage, mapping accuracy, tenure) that affect confidence in triggers, significance and offset feasibility — usually paired with a proportionate work plan.',
+    whyItMatters:
+      'Consultants get trusted when they name gaps instead of bluffing.',
+    exampleInPractice:
+      'You list “no targeted survey for species X in breeding season” as a gap driving seasonal survey timing.',
+    related: ['Field verification priorities', 'Baseline data', 'Survey window / seasonal timing'],
+    difficulty: 'easy',
+    topics: ['desktop-review', 'consulting', 'monitoring'],
+    sources: ['umwelt-interview-study-notes', 'umwelt-active-recall-workbook'],
+  },
+  {
+    id: 'red-flags',
+    term: 'Red flags',
+    plainEnglish:
+      'Early warning signs that something could be seriously wrong — legally, ecologically, or for delivery.',
+    consultantDefinition:
+      'High-risk indicators from desktop or field review (e.g. likely MNES without survey, clearing of regulated vegetation, tenure insecurity on offsets, hydrology legacy issues) that should trigger escalation, design iteration or further specialist input.',
+    whyItMatters:
+      'Interviewers want juniors who escalate appropriately.',
+    exampleInPractice:
+      'You flag “mapped TEC overlap + proposed clearing” as a red flag pending significance assessment.',
+    related: ['Constraints analysis', 'Significant impact', 'Offset suitability'],
+    difficulty: 'easy',
+    topics: ['consulting', 'desktop-review', 'approvals'],
+    sources: ['umwelt-active-recall-workbook'],
+  },
+  {
+    id: 'survey-window-seasonal',
+    term: 'Survey window / seasonal timing',
+    plainEnglish:
+      'The right time of year to detect species or habitat features — surveys aren’t interchangeable across seasons.',
+    consultantDefinition:
+      'Survey design must account for detectability: breeding seasons, flowering, migration, wet/dry cues and method limitations. Poor timing becomes a data gap that weakens referrals and impact arguments.',
+    whyItMatters:
+      'Shows professional survey literacy beyond “we walked around once”.',
+    exampleInPractice:
+      'You propose autumn call playback for a nocturnal species when evidence suggests higher detectability.',
+    related: ['SPRAT', 'Data gaps', 'Threatened species'],
+    difficulty: 'medium',
+    topics: ['threatened-species', 'monitoring', 'approvals'],
+    sources: ['sprat', 'dcceew-epbc-self-assess'],
+  },
+  {
+    id: 'performance-indicators',
+    term: 'Performance indicators',
+    plainEnglish:
+      'Measurable signs that restoration or an offset is working — not just “it looks greener”.',
+    consultantDefinition:
+      'Quantitative or semi-quantitative metrics (e.g. native cover, richness, weed thresholds, habitat features, habitat quality scores) used to track progress against objectives and adaptive management triggers.',
+    whyItMatters:
+      'Offsets and restoration plans are judged on indicators tied to outcomes.',
+    exampleInPractice:
+      'You align indicators with completion criteria and monitoring years in the management plan.',
+    related: ['Completion criteria', 'Adaptive management', 'Conservation outcome (offsets)'],
+    difficulty: 'easy',
+    topics: ['restoration', 'offsets', 'monitoring'],
+    sources: ['seq-restoration-framework-manual-2012', 'qld-terrestrial-habitat-quality-guide'],
+  },
+  {
+    id: 'completion-criteria',
+    term: 'Completion criteria',
+    plainEnglish:
+      'The agreed “we’re done” standard for a restoration or offset — clear pass/fail or threshold style tests.',
+    consultantDefinition:
+      'Defined endpoint tests for a project or management phase: e.g. native species richness targets, weed cover caps, structural thresholds, or habitat quality scores sustained over time — referenced in plans and monitoring schedules.',
+    whyItMatters:
+      'Without completion criteria, projects drift forever or fail quietly.',
+    exampleInPractice:
+      'You specify that two consecutive years above threshold triggers release from intensive maintenance.',
+    related: ['Performance indicators', 'Follow-up', 'Monitoring'],
+    difficulty: 'medium',
+    topics: ['restoration', 'offsets', 'monitoring'],
+    sources: ['seq-restoration-framework-manual-2012', 'qld-offsets-overview'],
+  },
+  {
+    id: 'primary-work',
+    term: 'Primary work',
+    plainEnglish:
+      'The main on-ground intervention phase — the core construction or restoration effort.',
+    consultantDefinition:
+      'In SEQ restoration planning language, primary work is the initial major implementation phase (e.g. major weed control, planting, earthworks) before follow-up fine-tuning.',
+    whyItMatters:
+      'It helps you sequence budgets, inspections and monitoring realistically.',
+    exampleInPractice:
+      'You schedule primary weed control in staged blocks to protect recruitment pulses.',
+    related: ['Follow-up', 'Maintenance', 'Management zones'],
+    difficulty: 'easy',
+    topics: ['restoration', 'consulting'],
+    sources: ['seq-restoration-framework-manual-2012'],
+  },
+  {
+    id: 'follow-up-restoration',
+    term: 'Follow-up',
+    plainEnglish:
+      'Return visits and touch-ups after the main works — where a lot of restoration actually succeeds or fails.',
+    consultantDefinition:
+      'Planned revisits to reinforce outcomes: spot-spraying emergent weeds, infill planting, minor erosion repair, and adjusting tactics based on monitoring — distinct from one-off primary works.',
+    whyItMatters:
+      'Interviewers like candidates who know recovery is a program, not an event.',
+    exampleInPractice:
+      'You book follow-up at 3 and 12 months aligned with weed seedbank flushes.',
+    related: ['Primary work', 'Maintenance', 'Adaptive management'],
+    difficulty: 'easy',
+    topics: ['restoration', 'monitoring'],
+    sources: ['seq-restoration-framework-manual-2012'],
+  },
+  {
+    id: 'maintenance-restoration',
+    term: 'Maintenance',
+    plainEnglish:
+      'Ongoing care to keep condition from slipping back — after initial establishment.',
+    consultantDefinition:
+      'Longer-term management to sustain trajectories: patrols for incursions, fire hygiene, drainage checks, and staged interventions to prevent reinvasion — especially important for offset security packages.',
+    whyItMatters:
+      'Offsets and restoration credits require proof of enduring management, not a single planting day.',
+    exampleInPractice:
+      'You tie maintenance effort to triggers if key weeds reappear above threshold.',
+    related: ['Follow-up', 'Adaptive management', 'Site hygiene'],
+    difficulty: 'easy',
+    topics: ['restoration', 'offsets', 'monitoring'],
+    sources: ['seq-restoration-framework-manual-2012'],
+  },
+  {
+    id: 'management-zones',
+    term: 'Management zones',
+    plainEnglish:
+      'Different parts of a site treated differently — because condition and objectives vary.',
+    consultantDefinition:
+      'Spatial zoning that matches interventions to regeneration capacity and risk: e.g. core remnant protection, assisted regeneration strips, reconstruction paddocks — each with tailored works and indicators.',
+    whyItMatters:
+      'Shows you won’t apply one recipe across a heterogeneous site.',
+    exampleInPractice:
+      'You map zones to align weed intensity, planting density and access controls.',
+    related: ['Regeneration capacity', 'Assisted natural regeneration', 'Performance indicators'],
+    difficulty: 'medium',
+    topics: ['restoration', 'gis', 'consulting'],
+    sources: ['seq-restoration-framework-manual-2012', 'umwelt-active-recall-workbook'],
+  },
+  {
+    id: 'site-hygiene',
+    term: 'Site hygiene',
+    plainEnglish:
+      'Keeping new weeds and pathogens out — vehicles, mulch, fill, and stock movement.',
+    consultantDefinition:
+      'Biosecurity-style controls: clean machinery, weed-free mulch, controlled access, and hygiene protocols to prevent introducing new degrading processes during works.',
+    whyItMatters:
+      'A common failure mode is “we restored it, then spread weed seeds everywhere”.',
+    exampleInPractice:
+      'You specify washdown points and sourcing rules for mulch in the construction environmental management plan.',
+    related: ['Maintenance', 'Primary work', 'Residual impact'],
+    difficulty: 'easy',
+    topics: ['restoration', 'consulting'],
+    sources: ['seq-restoration-framework-manual-2012'],
+  },
+  {
+    id: 'succession',
+    term: 'Succession',
+    plainEnglish:
+      'How vegetation and ecosystems change through time after disturbance — predictable in principle, messy in practice.',
+    consultantDefinition:
+      'The directional change in species composition and structure as communities assemble; restoration uses succession thinking but may need intervention where weed steady states or legacy degradation block desired trajectories.',
+    whyItMatters:
+      'Connects short-term works to long-term composition targets.',
+    exampleInPractice:
+      'You explain why early pioneers are expected, but mid-storey recruitment must appear by Year 5 to match targets.',
+    related: ['Reference ecosystem', 'Performance indicators', 'Adaptive management'],
+    difficulty: 'easy',
+    topics: ['restoration', 'monitoring'],
+    sources: ['seq-restoration-framework-manual-2012'],
+  },
+  {
+    id: 'biotic-abiotic-thresholds',
+    term: 'Biotic threshold / abiotic threshold',
+    plainEnglish:
+      'Ecological “tipping points” — living factors vs physical/chemical factors that block recovery.',
+    consultantDefinition:
+      'Threshold framing: biotic barriers include competition, missing pollinators or seed sources; abiotic barriers include compaction, altered hydrology, salinity or contaminated soils. Crossing thresholds can shift sites from ANR-viable to reconstruction-needed.',
+    whyItMatters:
+      'It’s a structured way to explain why simple weeding isn’t enough.',
+    exampleInPractice:
+      'You argue compaction is an abiotic threshold until soils are decompacted and drainage fixed.',
+    related: ['Regeneration capacity', 'Reconstruction', 'Assisted natural regeneration'],
+    difficulty: 'hard',
+    topics: ['restoration', 'consulting'],
+    sources: ['seq-restoration-framework-manual-2012', 'umwelt-active-recall-workbook'],
+  },
+  {
+    id: 'leap-tnfd',
+    term: 'LEAP (TNFD)',
+    plainEnglish:
+      'Locate, Evaluate, Assess, Prepare — TNFD’s staged approach to nature-related assessment.',
+    consultantDefinition:
+      'TNFD’s LEAP approach structures how organisations identify and assess nature-related issues before disclosures: locating interface with nature, evaluating dependencies and impacts, assessing risks and opportunities, and preparing responses and metrics.',
+    whyItMatters:
+      'Umwelt’s public Nature Positive material highlights ACT-D for strategy; TNFD is the parallel world of disclosure — LEAP is the methodology name candidates sometimes mix up with ACT-D.',
+    exampleInPractice:
+      'You clarify you’d support spatial ecology inputs to “Locate/Evaluate” for a client supply-chain screen.',
+    related: ['TNFD', 'ACT-D framework', 'Materiality (nature-related)'],
+    difficulty: 'medium',
+    topics: ['nature-positive', 'consulting', 'umwelt'],
+    sources: ['tnfd-framework', 'umwelt-nature-positive'],
+  },
+  {
+    id: 'tnfd-diro',
+    term: 'Dependencies, impacts, risks, opportunities (TNFD themes)',
+    plainEnglish:
+      'The four headline themes TNFD uses to organise nature-related financial disclosure thinking.',
+    consultantDefinition:
+      'TNFD organises assessment and disclosure around dependencies on nature, impacts to nature, nature-related risks (transition/physical/systemic) and opportunities — aligned to governance and investor-ready reporting.',
+    whyItMatters:
+      'Lets you speak credibly next to sustainability advisors without confusing EPBC “impact” with TNFD “impact”.',
+    exampleInPractice:
+      'You explain how field ecology reduces uncertainty in impact and dependency lines for a site portfolio.',
+    related: ['TNFD', 'LEAP (TNFD)', 'Nature Positive'],
+    difficulty: 'medium',
+    topics: ['nature-positive', 'consulting'],
+    sources: ['tnfd-framework'],
+  },
+  {
+    id: 'materiality-nature-related',
+    term: 'Materiality (nature-related issues)',
+    plainEnglish:
+      'Whether a nature issue is big enough that investors or boards should care — not the same as “material” in everyday speech.',
+    consultantDefinition:
+      'In disclosure contexts, materiality identifies which nature-related dependencies, impacts, risks and opportunities could substantively influence enterprise value or stakeholder decisions — assessed through governance processes per TNFD guidance.',
+    whyItMatters:
+      'Explains why some ecology work is “compliance” and some becomes enterprise risk.',
+    exampleInPractice:
+      'You frame threatened species risk as potentially material where approvals delay revenue.',
+    related: ['TNFD', 'LEAP (TNFD)'],
+    difficulty: 'hard',
+    topics: ['nature-positive', 'consulting'],
+    sources: ['tnfd-framework'],
+  },
+  {
+    id: 'nature-based-solutions-nbs',
+    term: 'Nature-based solutions (NbS)',
+    plainEnglish:
+      'Using healthy ecosystems and natural processes to solve problems — flood control, water quality, cooling, carbon.',
+    consultantDefinition:
+      'Actions to protect, conserve, restore and sustainably use ecosystems to meet societal challenges simultaneously — often evaluated against the IUCN Global Standard criteria for credibility.',
+    whyItMatters:
+      'Umwelt’s Nature Positive page references NbS and IUCN criteria — good linkage language for multi-benefit restoration.',
+    exampleInPractice:
+      'You pitch riparian restoration as NbS for sediment and thermal mitigation, not only biodiversity.',
+    related: ['IUCN Global Standard for Nature-based Solutions', 'Co-benefits', 'Nature Positive'],
+    difficulty: 'easy',
+    topics: ['nature-positive', 'restoration', 'umwelt'],
+    sources: ['umwelt-nature-positive', 'iucn-nbs-standard'],
+  },
+  {
+    id: 'iucn-nbs-global-standard',
+    term: 'IUCN Global Standard for Nature-based Solutions',
+    plainEnglish:
+      'IUCN’s quality standard for designing and checking NbS projects — eight criteria and indicators.',
+    consultantDefinition:
+      'A global standard that defines NbS and provides core criteria (e.g. societal challenge, scale, biodiversity, economic feasibility, inclusion) to design and assess credible NbS interventions.',
+    whyItMatters:
+      'Umwelt explicitly references IUCN’s eight criteria in Nature Positive service material — name-checking it signals aligned research.',
+    exampleInPractice:
+      'You map a restoration program to criteria like biodiversity and adaptive management for reporting.',
+    related: ['Nature-based solutions (NbS)', 'Co-benefits', 'ACT-D framework'],
+    difficulty: 'medium',
+    topics: ['nature-positive', 'policy', 'umwelt'],
+    sources: ['iucn-nbs-standard', 'umwelt-nature-positive'],
+  },
+  {
+    id: 'co-benefits',
+    term: 'Co-benefits',
+    plainEnglish:
+      'Extra wins beyond the main goal — carbon, water, people, amenity — from the same intervention.',
+    consultantDefinition:
+      'Additional ecosystem services or social outcomes delivered alongside the primary biodiversity objective (e.g. shade, erosion control, catchment water quality), often used to justify NbS and landscape-scale restoration.',
+    whyItMatters:
+      'Consulting pitches land better when ecology ties to client KPIs beyond compliance.',
+    exampleInPractice:
+      'You quantify riparian shading for thermal stress reduction as a co-benefit to species habitat gains.',
+    related: ['Nature-based solutions (NbS)', 'ACT-D framework', 'Nature Positive'],
+    difficulty: 'easy',
+    topics: ['nature-positive', 'restoration', 'consulting'],
+    sources: ['umwelt-nature-positive', 'iucn-nbs-standard'],
   },
 ]
 
