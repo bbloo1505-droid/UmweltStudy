@@ -105,7 +105,8 @@ export function DesktopWorkflowPage() {
     <div>
       <PageHeader
         title="Desktop Review Workflow"
-        subtitle="A practical simulator for how a junior ecologist should think through preliminary offsets/constraints desktop review in Queensland."
+        subtitle="Walk through the same checks you’d do on a real project — maps first, then field priorities — before anyone goes on site."
+        tip="Work top to bottom. Each step has plain notes, consultant-style wording, and mistakes juniors often make."
         badge="Study simulator"
       />
 

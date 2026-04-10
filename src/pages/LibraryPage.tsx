@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { Check, ExternalLink, Heart, RefreshCw, X } from 'lucide-react'
 
 import { PageHeader } from '../components/PageHeader'
@@ -43,10 +43,11 @@ export function LibraryPage() {
     <div>
       <PageHeader
         title="Legislation / Policy / Framework Library"
-        subtitle="Queensland + EPBC essentials, plus Umwelt’s published service language. Each entry is source-tagged with official links."
+        subtitle="Laws, policies, and frameworks you may name in an interview — with plain-English “what it is” and official links."
+        tip="Browse by tab (e.g. Queensland vs Commonwealth). “Legislation drill” flips through quick memory checks."
         right={
           <Button variant="secondary" asChild>
-            <a href="/library?mode=drill">Legislation drill</a>
+            <Link to="/library?mode=drill">Legislation drill</Link>
           </Button>
         }
       />

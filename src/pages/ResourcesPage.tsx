@@ -31,7 +31,8 @@ export function ResourcesPage() {
     <div>
       <PageHeader
         title="Resources"
-        subtitle="Official-link library only. Every study item in the app should trace back to one of these sources (or be explicitly flagged)."
+        subtitle="Hand-picked official pages (government + Umwelt). Use these to double-check details before the interview."
+        tip="Search works across titles and notes. “Needs verification” means we haven’t locked a live URL yet — treat with care."
       />
 
       <Card className="mb-4">

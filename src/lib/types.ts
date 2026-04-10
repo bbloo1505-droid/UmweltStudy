@@ -29,6 +29,16 @@ export type TopicTag =
   | 'qld'
   | 'tool'
 
+export type McqQuestion = {
+  id: string
+  question: string
+  /** Exactly four options; index 0–3 is the correct answer */
+  options: [string, string, string, string]
+  correctIndex: 0 | 1 | 2 | 3
+  explanation: string
+  topics: TopicTag[]
+}
+
 export type GlossaryCard = {
   id: string
   term: string

@@ -4,11 +4,14 @@ import { cn } from '../lib/utils'
 export function PageHeader({
   title,
   subtitle,
+  tip,
   right,
   badge,
 }: {
   title: string
   subtitle?: string
+  /** Plain-English “what do I do here?” — shown under the subtitle */
+  tip?: string
   badge?: string
   right?: React.ReactNode
 }) {
@@ -20,6 +23,9 @@ export function PageHeader({
           {badge ? <Badge variant="muted">{badge}</Badge> : null}
         </div>
         {subtitle ? <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p> : null}
+        {tip ? (
+          <p className="mt-3 border-l-2 border-primary/35 pl-3 text-sm leading-relaxed text-foreground/90">{tip}</p>
+        ) : null}
       </div>
       {right ? <div className="shrink-0">{right}</div> : null}
     </div>

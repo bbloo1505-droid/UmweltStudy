@@ -7,7 +7,8 @@ export function StoriesPage() {
     <div>
       <PageHeader
         title="Story Bank"
-        subtitle="Map your experience to interview themes. Use STAR, then add the consultant framing."
+        subtitle="Pre-filled examples you can copy from — replace with your own projects using Situation → Task → Action → Result."
+        tip="For each story, note what skill it proves (leadership, field method, GIS, etc.) so you can drop it into different questions."
       />
 
       <div className="space-y-4">

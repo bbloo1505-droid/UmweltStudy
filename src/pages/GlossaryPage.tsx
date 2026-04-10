@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 import { PageHeader } from '../components/PageHeader'
@@ -15,7 +15,7 @@ import { useAppState } from '../state/AppStateProvider'
 import { reviewGlossaryCard, withUpdatedFavourite } from '../state/actions'
 import { FlashcardPlayer, type FlashcardMode } from '../components/study/FlashcardPlayer'
 
-const TOPICS: TopicTag[] = [
+export const GLOSSARY_TOPIC_TAGS: TopicTag[] = [
   'restoration',
   'offsets',
   'approvals',
@@ -30,15 +30,25 @@ const TOPICS: TopicTag[] = [
   'legislation',
 ]
 
+function topicFromSearch(params: URLSearchParams): TopicTag | 'all' {
+  const t = params.get('topic')
+  if (!t) return 'all'
+  return GLOSSARY_TOPIC_TAGS.includes(t as TopicTag) ? (t as TopicTag) : 'all'
+}
+
 export function GlossaryPage() {
   const { state, persist } = useAppState()
   const [params, setParams] = useSearchParams()
   const [q, setQ] = useState('')
-  const [topic, setTopic] = useState<TopicTag | 'all'>('all')
+  const [topic, setTopic] = useState<TopicTag | 'all'>(() => topicFromSearch(new URLSearchParams(window.location.search)))
   const [mode, setMode] = useState<FlashcardMode>('flip')
 
   const focusId = params.get('focus')
   const session = params.get('session')
+
+  useEffect(() => {
+    setTopic(topicFromSearch(params))
+  }, [params])
 
   const filtered = useMemo(() => {
     let items = glossaryCards
@@ -67,19 +77,32 @@ export function GlossaryPage() {
     })
   }
 
+  const applyTopicFilter = (t: TopicTag | 'all') => {
+    setTopic(t)
+    setParams(
+      (p) => {
+        if (t === 'all') p.delete('topic')
+        else p.set('topic', t)
+        return p
+      },
+      { replace: true },
+    )
+  }
+
   return (
     <div>
       <PhotoHero
         kind="glossary"
         emoji="📚"
         title="Glossary Flashcards"
-        subtitle="Role-specific terms + consultant language. Anything that can’t be confirmed from official sources is flagged."
+        subtitle="Learn each term in plain English, then the consultant version — so you can say both in the interview."
       />
 
       <div className="mt-4">
         <PageHeader
           title="Study"
-          subtitle="Flip, quiz, or type-the-answer — then rate your confidence."
+          subtitle="Pick a mode below the filters: flip cards, quick quiz, or type the answer."
+          tip="Filters narrow the list. “Daily review” shows cards that are due for revision (built-in spaced repetition)."
           right={
             <div className="flex gap-2">
               <Button variant="secondary" onClick={startRandomDue}>
@@ -88,7 +111,6 @@ export function GlossaryPage() {
               <Button
                 variant="outline"
                 onClick={() => {
-                  setTopic('all')
                   setQ('')
                   setParams(new URLSearchParams())
                 }}
@@ -111,9 +133,9 @@ export function GlossaryPage() {
             <div>
               <div className="text-xs font-semibold text-muted-foreground">Topic</div>
               <div className="mt-2 flex flex-wrap gap-2">
-                <Chip active={topic === 'all'} onClick={() => setTopic('all')} label="All" />
-                {TOPICS.map((t) => (
-                  <Chip key={t} active={topic === t} onClick={() => setTopic(t)} label={t} />
+                <Chip active={topic === 'all'} onClick={() => applyTopicFilter('all')} label="All" />
+                {GLOSSARY_TOPIC_TAGS.map((t) => (
+                  <Chip key={t} active={topic === t} onClick={() => applyTopicFilter(t)} label={t} />
                 ))}
               </div>
             </div>

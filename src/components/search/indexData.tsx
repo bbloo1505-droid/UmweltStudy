@@ -2,6 +2,7 @@ import { glossaryCards } from '../../data/glossary'
 import { interviewQuestions } from '../../data/interview'
 import { libraryEntries } from '../../data/library'
 import { scenarios } from '../../data/scenarios'
+import { mcqQuestions } from '../../data/mcq'
 import { includesQuery } from '../../lib/search'
 
 export type OmniResult = {
@@ -56,6 +57,18 @@ export function omniSearch(query: string): OmniResult[] {
         to: `/scenarios?focus=${encodeURIComponent(s.id)}`,
       })
     }
+  }
+
+  const mcqHits = mcqQuestions.filter((m) =>
+    includesQuery(`${m.question} ${m.explanation} ${m.options.join(' ')}`, query),
+  )
+  if (mcqHits.length > 0) {
+    results.push({
+      key: 'mcq:hub',
+      title: 'Multiple choice quiz',
+      subtitle: `${mcqHits.length} matching question${mcqHits.length === 1 ? '' : 's'} · open Quiz page`,
+      to: '/quiz',
+    })
   }
 
   return results

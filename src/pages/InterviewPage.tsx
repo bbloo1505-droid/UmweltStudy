@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { Clock, Heart, RefreshCw } from 'lucide-react'
 
+import { AnswerFrameCard } from '../components/AnswerFrameCard'
 import { PageHeader } from '../components/PageHeader'
 import { Badge } from '../components/ui/badge'
 import { Button } from '../components/ui/button'
@@ -38,35 +39,42 @@ export function InterviewPage() {
     <div>
       <PageHeader
         title="Interview Questions Bank"
-        subtitle="Designed for speaking out loud: each question includes what they’re testing, answer structure, common mistakes, and harder follow-ups."
+        subtitle="Each card shows what the panel is really testing, a sensible answer shape, and traps to avoid."
+        tip="Open “Mock interview mode” for a random question and timer — like a short practice round."
         right={
           <Button variant="secondary" asChild>
-            <a href="/interview?mode=mock">Mock interview mode</a>
+            <Link to="/interview?mode=mock">Mock interview mode</Link>
           </Button>
         }
       />
 
       {mode === 'mock' ? (
-        <MockInterview
-          items={interviewQuestions}
-          onReview={(id, res) => persist(reviewInterview(state, id, res))}
-        />
+        <div className="space-y-4">
+          <AnswerFrameCard variant="compact" />
+          <MockInterview
+            items={interviewQuestions}
+            onReview={(id, res) => persist(reviewInterview(state, id, res))}
+          />
+        </div>
       ) : (
         <div className="grid gap-4 lg:grid-cols-[360px_1fr]">
-          <Card className="h-fit">
-            <CardContent className="space-y-3 p-4">
-              <div>
-                <div className="text-xs font-semibold text-muted-foreground">Search</div>
-                <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="e.g. offsets, PMST, uncertainty" />
-              </div>
-              <div className="rounded-lg border bg-muted/40 p-3 text-xs text-muted-foreground">
-                <div className="font-semibold text-foreground">Speaking drill</div>
-                <div className="mt-1">
-                  Answer in 60–90 seconds. Then add one “defensible next step” and one “risk/caveat”.
+          <div className="space-y-4">
+            <Card className="h-fit">
+              <CardContent className="space-y-3 p-4">
+                <div>
+                  <div className="text-xs font-semibold text-muted-foreground">Search</div>
+                  <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="e.g. offsets, PMST, uncertainty" />
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+                <div className="rounded-lg border bg-muted/40 p-3 text-xs text-muted-foreground">
+                  <div className="font-semibold text-foreground">Speaking drill</div>
+                  <div className="mt-1">
+                    Answer in 60–90 seconds. Then add one “defensible next step” and one “risk/caveat”.
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <AnswerFrameCard />
+          </div>
 
           <div className="space-y-4">
             <div className="text-xs text-muted-foreground">

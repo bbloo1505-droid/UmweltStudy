@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { HelpCallout } from '../components/HelpCallout'
 import { PageHeader } from '../components/PageHeader'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
 import { Badge } from '../components/ui/badge'
@@ -307,16 +308,23 @@ export function LanguageLabPage() {
     <div>
       <PageHeader
         title="Consultant Language Lab"
-        subtitle="Sound sharp but honest. Translate field observations into defensible recommendations."
+        subtitle="Practice sounding like a junior consultant: clear, careful, evidence-based — not exam essays."
       />
+
+      <div className="mb-4">
+        <HelpCallout variant="muted">
+          Scroll down for <strong>phrase pairs</strong> (plain → professional), then <strong>fill-in-the-blank</strong>{' '}
+          exercises. Use the blocks to rehearse out loud.
+        </HelpCallout>
+      </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
         <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle className="text-base">Fill in the blanks</CardTitle>
             <CardDescription>
-              Tap a gap to select it (highlighted), then tap a word card. Tap a filled gap to return the word to the bank.
-              Words are shuffled each reset.
+              Tap an empty box, then tap a word below to fill it — or tap words in order and they fill the next free space.
+              Wrong order? Tap a filled box to send the word back. <strong>Reset</strong> shuffles a new set.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">

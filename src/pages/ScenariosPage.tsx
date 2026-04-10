@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { Check, Heart, X } from 'lucide-react'
 
 import { PageHeader } from '../components/PageHeader'
@@ -39,15 +39,11 @@ export function ScenariosPage() {
     <div>
       <PageHeader
         title="Scenario Drills"
-        subtitle="Practical consulting situations. Speak out loud using a framework, then self-rate."
+        subtitle="Short “client-style” problems — answer as if you’re in a meeting, not writing an essay."
+        tip="Use the sidebar prompts on each card: strong answer, red flags, and simple language you could say aloud."
         right={
-          <Button
-            variant="secondary"
-            onClick={() => {
-              window.location.href = '/scenarios?session=today'
-            }}
-          >
-            Today’s due scenarios
+          <Button variant="secondary" asChild>
+            <Link to="/scenarios?session=today">Today’s due scenarios</Link>
           </Button>
         }
       />
