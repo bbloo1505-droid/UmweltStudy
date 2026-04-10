@@ -7,6 +7,7 @@ import { Button } from '../components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { mcqQuestions } from '../data/mcq'
+import { withShuffledMcqOptions } from '../lib/shuffleMcq'
 import { cn } from '../lib/utils'
 
 const LABELS = ['A', 'B', 'C', 'D'] as const
@@ -18,17 +19,18 @@ export function McqPage() {
   const [singleIdx, setSingleIdx] = useState(0)
   const [singleSelected, setSingleSelected] = useState<number | null>(null)
 
-  const total = mcqQuestions.length
+  const questions = useMemo(() => withShuffledMcqOptions(mcqQuestions), [])
+  const total = questions.length
 
   const result = useMemo(() => {
     if (!submitted) return null
     let correct = 0
-    for (const q of mcqQuestions) {
+    for (const q of questions) {
       const a = answers[q.id]
       if (a === q.correctIndex) correct += 1
     }
     return { correct }
-  }, [submitted, answers])
+  }, [submitted, answers, questions])
 
   const pick = (id: string, optionIndex: number) => {
     setAnswers((prev) => ({ ...prev, [id]: optionIndex }))
@@ -40,7 +42,7 @@ export function McqPage() {
     setSubmitted(false)
   }
 
-  const current = mcqQuestions[singleIdx]!
+  const current = questions[singleIdx]!
 
   return (
     <div>
@@ -92,7 +94,7 @@ export function McqPage() {
           </div>
 
           <div className="space-y-4">
-            {mcqQuestions.map((q, i) => (
+            {questions.map((q, i) => (
               <Card key={q.id}>
                 <CardHeader className="pb-2">
                   <CardTitle className="text-base font-medium leading-snug">
